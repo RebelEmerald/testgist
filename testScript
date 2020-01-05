@@ -1,0 +1,88 @@
+<style>
+table th, td {
+    border: 1px solid black;
+	padding:10px;
+	
+}
+</style>
+<html>
+<head>
+
+</head>
+
+<body>
+
+<table id = "taskkill">
+<tr>
+<td>
+TASKKILL system [/U username [/P [password]]] </br>
+  { filter processid | /IM imagename } /T /F </br>
+ </td>
+<td colspan = 2>This tool is used to terminate tasks by process id (PID) or image name
+</td>
+</tr>
+<tr>
+<td>TASKKILL /T /F /IM Firefox.exe 
+</td>
+<td>/S    system  </td><td>Specifies the remote system to connect to. </td>
+</tr>
+<tr>
+<td/>
+<td>/U    [domain\]user</td><td>Specifies the user context under which the command should execute. </td>
+ </tr>
+ <tr>
+ <td/>
+ <td>/P    [password] </td><td>Specifies the password for the given user context.</br>
+ Prompts for input if omitted. </td>
+</tr>
+<tr>     
+<td/>
+<td>/FI   filter </td><td>Applies a filter to select a set of tasks. </br>
+Allows "*" to be used. ex. imagename eq acme* </td>
+</tr>
+<tr>
+<td/>
+<td>/PID  processid     </td><td> Specifies the PID of the process to be terminated. <br/>
+Use TaskList to get the PID. </td>
+</tr>
+<tr>
+<td/>     
+<td>/IM   imagename   </td><td>Specifies the image name of the process to be terminated. </br>
+Wildcard '*' can be used to specify all tasks or image names. </td>
+</tr>
+<tr>
+<td/>
+<td>/T  </td><td>Terminates the specified process and any child processes which were started by it. </td>
+ </tr>
+ <tr>
+ <td/>
+ <td>/F</td><td>Specifies to forcefully terminate the process(es). </td>
+  </tr>
+  <tr>
+<td/>
+<td> /?                     </td><td>Displays this help message. </td>
+</tr>
+</table>
+
+<button onclick="hideText()">Hide</button>
+<button onclick="showText()">Show</button>
+<script>
+
+function hideText() {
+  var myNodelist = document.querySelectorAll("table");
+  var i;
+  for (i = 0; i < myNodelist.length; i++) {
+    myNodelist[i].style.display = "none";
+  }
+}
+
+function showText() {
+  var myNodelist = document.querySelectorAll("table");
+  var i;
+  for (i = 0; i < myNodelist.length; i++) {
+    myNodelist[i].style.display = "block";
+  }
+}
+</script>
+</body>
+</html>
